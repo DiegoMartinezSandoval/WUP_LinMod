@@ -158,13 +158,19 @@ Based off of my code, the target point is .1496 (Rounded to the ten thousandths 
 ```{r}
 anova(lmr, data2)
 ```
-
+The residual degrees of freedom for Model 1 (SIMS~ARM) is 145 while the residual degrees of freedom for Model 2 (SIMS~ARM+GRIP) is 144. There is a difference of 1. The residual sum of squares for Model 1 is 217.88 while the residual sum of squares for Model 2 is 188.43. There is a difference of 29.45 between the residual sum of squares. Model 1 does not have Df, Sum of Sq, F, or Pr(>F). Model 2 has a degrees of freedom of 1. Model 2 has a sum of squares of 29.45. Model 2 has a p-value of 0.000004994. These 2 models differ greatly. 
 
 ### Model.2 vs Model.3
 
 ```{r}
 anova(Hi, data2)
 ```
+The residual degrees of freedom for Model 1 (SIMS~GRIP) is 145 while the residual degrees of freedom for Model 2 (SIMS~ARM+GRIP) is 144. There is a difference of 1. The residual sum of squares for Model 1 is 243.07 while the residual sum of squares for Model 2 is 188.43. There is a difference of 54.64 between the residual sum of squares. Model 1 does not have Df, Sum of Sq, F, or Pr(>F). Model 2 has a degrees of freedom of 1. Model 2 has a sum of squares of 54.64. Model 2 has a p-value of 0.000000001495.  These 2 models differ greatly. 
+
 
 ## Informally compare Model.1 with model.2
 
+```{r}
+anova(lmr, Hi)
+```
+The residual degrees of freedom for Model 1 (SIMS~ARM) is 145 while the residual degrees of freedom for Model 2 (SIMS~GRIP) is 145. There is a difference of 0. The residual sum of squares for Model 1 is 217.88 while the residual sum of squares for Model 2 is 243.07. There is a difference of -25.19 between the residual sum of squares. Model 1 does not have Df, Sum of Sq, F, or Pr(>F). Model 2 has a degrees of freedom of 0. Model 2 has a sum of squares of -25.19. Neither Model 1 or Model 2 have a p-value. These two models are somewhat different. They only share the same residual degrees of freedom and in how they both don't have a p-value. 
