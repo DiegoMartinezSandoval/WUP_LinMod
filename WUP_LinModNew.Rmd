@@ -138,6 +138,8 @@ data2 = lm(SIMS~ARM+GRIP, data = data)
 summary(data2)
 ```
 `
+The minimum value is -3.1846. The Q1 value is -0.7380. The Q3 value is .7394. The median is -0.0641. The max is 2.8634. The residual standard error is 1.144 on 144 degrees of freedom.  The Multiple R-squared value is 0.5422. The Adjusted R-squared value is 0.5358. The p-value is 0.00000000000000022. The p-value is by far lower than .05. 
+
   
 ### Inferential  (Build 2-dimentional model.3)
 
@@ -147,6 +149,7 @@ summary(data2)
 predict.lm(data2, newdata= data.frame(GRIP = 94, ARM = 88))
 ```
 
+Based off of my code, the target point is .1496 (Rounded to the ten thousandths place). 
 
 ## Comparing nested models ANOVA Test
 
