@@ -50,7 +50,7 @@ My scatter plot for SIM~ARMS appears to be correct since there is a positive lin
 ```{r}
 cor(SIMS~ARM,data=data)
 ```
-The numerical results conclude with a value of 0.686. The numerical results were given to me from the table above. 
+The numerical results conclude with a value of 0.686 (Rounded to the thousandth place). The numerical results were given to me from the table above. 
 
 ### Inferential  (Build model.1)
 
@@ -77,7 +77,7 @@ plot(lmr)
 ```
 
 
-I can tell that my scatter plots are accurate because they all relatively have the shape of a straight line. Of course, not perfectly, but this is as accurate as I can get with the model fit. The model fits include Residuals vs. Fitted, Normal Q-Q, Scale Location, and Residuals vs. Leverage. 
+I can tell that my scatter plots are accurate because they all relatively have the shape of a straight line. Of course, not perfectly, but this is as accurate as I can get with the model fit. The model fits include Residuals vs. Fitted, Normal Q-Q, Scale Location, and Residuals vs. Leverage.  Plus, at the bottom it shows lm(SIMS~ARM) so I am 100% sure that I'm showing the correct numerical variables for this model. 
   
 
 ## Model 2 SIM~GRIP
@@ -86,9 +86,12 @@ I can tell that my scatter plots are accurate because they all relatively have t
 
 ```{r}
 plot(SIMS~GRIP,data=data)
-Hi = lm(SIMS~ARM, data = data )
+Hi = lm(SIMS~GRIP, data = data )
 abline(Hi)
 ```
+
+
+My scatter plot for SIM~GRIP appears to be correct since there is a positive linear relationship between the two numerical variables. The y-intercept is between -4 and -2. SIMS goes all up to 4. GRIP goes all up to 200. The relationship appears to be quite strong based off of this scatter plot. 
 
 
 ### Numerical results 
@@ -97,27 +100,34 @@ abline(Hi)
 cor(SIMS~GRIP,data=data)
 ```
 
+Based off of my code, the numerical value is 0.640 (Rounded to the thousandth place). This number is given to me by the table above. 
+
 ### Inferential  (Build model.2)
   
 ```{r}
 summary(Hi)
 newdata = c(GRIP = 94, ARM = 88 )
-```  
+```
+The minimum value is -2.9295. The Q1 value is -0.8708. The Q3 value is .8039. The median is -0.1219. The max is 3.3494.  The residual standard error is 1.295 on 145 degrees of freedom. The Multiple R-squared value is 0.4094. The Adjusted R-squared value is 0.4053. The p-value is 0.00000000000000022. The p-value is by far lower than .05. 
+ 
 
 #### predict model.2 at target point
 
 
 ```{r}
-predictSIM = predict.lm(Hi, newdata = data.frame (GRIP = 94, ARM = 88))
-print(predictSIM)
+predictGRIP = predict.lm(Hi, newdata = data.frame (GRIP = 94, ARM = 88))
+print(predictGRIP)
 ```
-
+Based off of my coding, the target point value is -0.536 (Rounded to the nearest thousandth).  
 
 #### now add the model fit to our plot for model.2
   
 ```{r}
 plot(Hi)
 ```
+
+I can tell that my scatter plots are accurate because they all relatively have the shape of a straight line. Of course, not perfectly, but this is as accurate as I can get with the model fit. The model fits include Residuals vs. Fitted, Normal Q-Q, Scale Location, and Residuals vs. Leverage. Plus, at the bottom it shows lm(SIMS~GRIP) so I am 100% sure that I'm showing the correct numerical variables for this model. 
+
 
 ## Model 3 SIM~ARM+GRIP
 
