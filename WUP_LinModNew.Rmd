@@ -168,7 +168,7 @@ anova(Hi, data2)
 The residual degrees of freedom for Model 1 (SIMS~GRIP) is 145 while the residual degrees of freedom for Model 2 (SIMS~ARM+GRIP) is 144. There is a difference of 1. The residual sum of squares for Model 1 is 243.07 while the residual sum of squares for Model 2 is 188.43. There is a difference of 54.64 between the residual sum of squares. Model 1 does not have Df, Sum of Sq, F, or Pr(>F). Model 2 has a degrees of freedom of 1. Model 2 has a sum of squares of 54.64. Model 2 has a p-value of 0.000000001495.  These 2 models differ greatly. 
 
 
-## Informally compare Model.1 with model.2
+## Informally compare Model.1 with model.2  
 
 ```{r}
 anova(lmr, Hi)
